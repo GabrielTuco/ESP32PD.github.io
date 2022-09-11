@@ -61,7 +61,7 @@ const storeReducer = (state,action) =>{
               }
         case types.Login:
             setValue("user", action.body.user)
-            setValue("actualHost", action.body.cameras[0].ip)
+            if(action.body.cameras.length > 0)setValue("actualHost", action.body.cameras[0].ip)
             setValue("cameras", action.body.cameras)
             setValue("token", action.body.token)
             setValue("users", action.body.users)

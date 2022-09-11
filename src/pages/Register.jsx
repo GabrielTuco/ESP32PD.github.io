@@ -57,16 +57,16 @@ export const Register = () => {
         setLoading(false)
         const data = await response.json()
         onSetNewState('msg',data.msg)  
+        return
+
+      } else{
+        navigate('/MainPage');
         dispatch({
           type: types.Register,
           body: {
             user:user,  
             type: true
         }});
-        return
-
-      } else{
-        navigate('/MainPage');
       }
       
     }
